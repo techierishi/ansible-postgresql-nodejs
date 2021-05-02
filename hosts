@@ -1,0 +1,9 @@
+[all:vars]
+ansible_connection=ssh
+ansible_user=root
+
+[local]
+localhost
+
+[server]
+139.59.12.138

@@ -1,0 +1,36 @@
+---
+
+- name: Install Git
+  package: 
+    name: git 
+    state: present
+  become: yes
+
+- name: Install the 'build-essential' meta package
+  package: 
+    name: "build-essential"
+    state: present
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+  become: yes
+
+- name: Install net-tools
+  package:
+    name: net-tools 
+    state: present
+  become: yes
+  become_method: sudo
+
+- name: Install OpenSSL
+  package: 
+    name: openssl
+    state: present
+  become: yes
+  become_method: sudo
+
+- name: Install code-server
+  shell: |
+      cd /tmp/
+      curl -fsSL https://code-server.dev/install.sh -O install.sh
+      sh install.sh
+  become: yes
+  become_method: sudo

@@ -1,0 +1,6 @@
+---
+- hosts: server
+  become: yes
+  gather_facts: yes
+  roles:
+  - PostgresNode

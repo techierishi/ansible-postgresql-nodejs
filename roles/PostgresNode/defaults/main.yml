@@ -1,0 +1,12 @@
+---
+db_user: sbiswadbusr
+db_name: sbiswadb
+db_password: b9beQNx7ePeMGx
+
+NODEJS_VERSION: "14"
+ansible_distribution_release: "focal"
+
+update_apt_cache: true
+postgresql_version: 12
+
+coder_version: "3.9.2"
